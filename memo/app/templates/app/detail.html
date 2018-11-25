@@ -1,0 +1,11 @@
+<a href="{% url 'app:index' %}">ホームに戻る</a>
+
+<h2>{{ memo.title }}</h2>
+
+{{ memo.text | linebreaks | urlize }}
+<button><a href="{% url 'app:edit_memo' memo.pk %}">編集</a></button>
+<form action="{% url 'app:delete_memo' memo.pk %}" method="post">
+  {% csrf_token %}
+  <button type="submit" name="button"
+  onclick="return confirm('本当に削除しますか？');">削除</button>
+</form>

@@ -1,0 +1,7 @@
+<a href="{% url 'app:detail' memo.id %}">戻る</a>
+
+<form action="{% url 'app:edit_memo' memo.id %}" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" name="button">保存</button>
+</form>

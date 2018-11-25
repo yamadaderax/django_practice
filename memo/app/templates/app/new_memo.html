@@ -1,0 +1,8 @@
+<a href="{% url 'app:index' %}">ホームに戻る</a>
+
+
+<form action="{% url 'app:new_memo' %}" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" name="button">保存</button>
+</form>

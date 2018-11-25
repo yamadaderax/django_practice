@@ -1,0 +1,8 @@
+<a href="{% url 'app:new_memo' %}">新規メモ作成</a>
+
+{% for memo in memos %}
+<a href="{% url 'app:detail' memo.id %}">
+  <br>{{ memo }}
+  <span>{{ memo.updated_datetime }}</span>
+</a>
+{% endfor %}
